@@ -1,14 +1,37 @@
 [project]
-name = "bds"
+name = "bds-mcbe"
 version = "0.1.0"
 description = "Bedrock Scripting - CLI tool for managing Minecraft Bedrock scripting projects"
 readme = "README.md"
-requires-python = ">=3.13"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "PhantomXD" }
+]
+keywords = ["minecraft", "bedrock", "scripting", "cli", "gamedev"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Games/Entertainment",
+    "Topic :: Software Development :: Build Tools",
+]
 dependencies = [
-    "requests>=2.32.5",
+    "requests>=2.28.0",
     "click>=8.1.0",
     "InquirerPy>=0.3.4",
 ]
+
+[project.urls]
+Homepage = "https://github.com/PhantomXD-nepal/bds"
+Repository = "https://github.com/PhantomXD-nepal/bds"
 
 [project.scripts]
 bds = "src.main:cli"
@@ -18,4 +41,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src"]
+packages = ["src", "registry.json"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "registry.json", "README.md", "LICENSE"]
