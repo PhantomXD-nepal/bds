@@ -1,19 +1,20 @@
 """
-bds-cli - Minecraft Bedrock Script API CLI Tool
+bds - Bedrock Scripting CLI Tool
 
 A CLI for managing Minecraft Bedrock scripting projects.
 """
 
 import click
 
-from src.commands.init import run_init
 from src.commands.add import run_add
+from src.commands.init import run_init
+from src.commands.list import run_list
 
 
 @click.group()
-@click.version_option(version="0.1.0", prog_name="bds-cli")
+@click.version_option(version="0.1.0", prog_name="bds")
 def cli():
-    """bds-cli - Minecraft Bedrock Script API Manager"""
+    """bds - Bedrock Scripting Manager"""
     pass
 
 
@@ -31,10 +32,11 @@ def init(directory: str):
 @cli.command()
 @click.argument("script_name")
 @click.option(
-    "-d", "--directory",
+    "-d",
+    "--directory",
     default=".",
     type=click.Path(),
-    help="Project directory (defaults to current directory)"
+    help="Project directory (defaults to current directory)",
 )
 def add(script_name: str, directory: str):
     """
@@ -43,6 +45,12 @@ def add(script_name: str, directory: str):
     Downloads SCRIPT_NAME from the registry and adds it to scripts/lib/.
     """
     run_add(script_name, directory)
+
+
+@cli.command(name="list")
+def list_packages():
+    """List all available packages in the registry."""
+    run_list()
 
 
 if __name__ == "__main__":

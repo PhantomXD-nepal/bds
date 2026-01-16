@@ -1,8 +1,16 @@
 {
   "packages": {
-    "example-lib": {
-      "github": "https://github.com/example/minecraft-lib",
-      "description": "An example Minecraft scripting library"
+    "inventorySaveLoader": {
+      "github": "https://github.com/PhantomXD-nepal/bds/tree/main/scripts/inventorySaveLoader",
+      "description": "A script package for saving and loading player inventories."
+    },
+    "itemStackParser": {
+      "github": "https://github.com/PhantomXD-nepal/bds/tree/main/scripts/itemStackParser",
+      "description": "A script package for parsing and manipulating item stacks."
+    },
+    "jumpDetector": {
+      "github": "https://github.com/PhantomXD-nepal/bds/tree/main/scripts/jumpDetector",
+      "description": "A script package for detecting player jumps."
     }
   }
 }

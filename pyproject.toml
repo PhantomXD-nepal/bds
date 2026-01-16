@@ -1,7 +1,7 @@
 [project]
-name = "bds-cli"
+name = "bds"
 version = "0.1.0"
-description = "CLI tool for managing Minecraft Bedrock scripting projects"
+description = "Bedrock Scripting - CLI tool for managing Minecraft Bedrock scripting projects"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
@@ -11,7 +11,7 @@ dependencies = [
 ]
 
 [project.scripts]
-bds-cli = "src.main:cli"
+bds = "src.main:cli"
 
 [build-system]
 requires = ["hatchling"]
