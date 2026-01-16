@@ -1,0 +1,8 @@
+{
+  "packages": {
+    "example-lib": {
+      "github": "https://github.com/example/minecraft-lib",
+      "description": "An example Minecraft scripting library"
+    }
+  }
+}

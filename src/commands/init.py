@@ -126,9 +126,11 @@ def run_init(directory: str) -> None:
     click.echo("Creating the necessary folders.")
     # Create a new scripts folder with a main.js file
     scripts_dir_path = target_path / "scripts"
+    lib_dir_path = scripts_dir_path / "lib"
     main_js_path = scripts_dir_path / "main.js"
 
     scripts_dir_path.mkdir(exist_ok=True)
+    lib_dir_path.mkdir(exist_ok=True)
 
     if not main_js_path.exists():
         main_js_path.write_text(
@@ -137,4 +139,5 @@ def run_init(directory: str) -> None:
             "world.sendMessage('Hello from bds-cli!');\n"
         )
 
-    click.echo(click.style("Created scripts/main.js", fg="green"))
+    click.echo(click.style("✓ Created scripts/main.js", fg="green"))
+    click.echo(click.style("✓ Created scripts/lib/", fg="green"))
